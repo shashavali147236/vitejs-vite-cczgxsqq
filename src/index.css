@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #1e1b4b;
+  background: #f7f8fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  --primary: #6d4aff;
+  --primary-dark: #5535db;
+  --text: #242044;
+  --muted: #77758c;
+  --border: #e8e8f2;
+  --surface: #ffffff;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f7f8fc;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #b8aaff;
+  outline-offset: 2px;
+}
+
+#root {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 24px clamp(16px, 4vw, 48px);
+  color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+h2 {
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.65;
+}
+
+a {
+  color: var(--primary);
+}
+
+img {
+  max-width: 100%;
+}
+
+button:not(:disabled):hover {
+  filter: brightness(0.97);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+::selection {
+  background: #ded6ff;
+  color: #24145e;
+}
+
+@media (max-width: 640px) {
+  #root {
+    padding: 16px;
+  }
+
+  h1 {
+    letter-spacing: -0.035em;
+  }
+}

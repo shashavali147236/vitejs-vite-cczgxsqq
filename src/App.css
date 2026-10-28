@@ -1,0 +1,193 @@
+/* QuizCraft AI — modern dashboard styling */
+
+:root {
+  --qc-primary: #6d4aff;
+  --qc-primary-dark: #5535db;
+  --qc-primary-light: #f0ecff;
+  --qc-ink: #211b46;
+  --qc-muted: #77758c;
+  --qc-border: #e8e8f2;
+  --qc-card: #ffffff;
+  --qc-bg: #f7f8fc;
+  --qc-radius: 16px;
+  --qc-shadow: 0 6px 24px rgba(39, 27, 92, 0.06);
+}
+
+/* General layout */
+#root {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+body {
+  background: var(--qc-bg);
+  color: var(--qc-ink);
+}
+
+main {
+  width: 100%;
+}
+
+/* App navigation */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 0 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--qc-border);
+}
+
+nav button {
+  border: 1px solid var(--qc-border);
+  border-radius: 10px;
+  background: var(--qc-card);
+  color: var(--qc-ink);
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+nav button:hover {
+  background: var(--qc-primary-light);
+  border-color: #d6ccff;
+}
+
+nav button:focus,
+nav button[aria-current='page'] {
+  background: var(--qc-primary);
+  color: white;
+  border-color: var(--qc-primary);
+}
+
+/* Buttons */
+button {
+  border-radius: 10px;
+}
+
+button:not(:disabled) {
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+/* Inputs and forms */
+input,
+select,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #dcdbea;
+  border-radius: 10px;
+  padding: 11px 13px;
+  background: white;
+  color: var(--qc-ink);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid rgba(109, 74, 255, 0.13);
+  border-color: var(--qc-primary);
+}
+
+label {
+  font-weight: 500;
+}
+
+/* Headings and text */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--qc-ink);
+}
+
+h1 {
+  line-height: 1.12;
+}
+
+p {
+  color: inherit;
+}
+
+/* Cards and panels */
+.card,
+.quiz-card,
+.stat-card,
+.dashboard-card,
+.panel {
+  background: var(--qc-card);
+  border: 1px solid var(--qc-border);
+  border-radius: var(--qc-radius);
+  box-shadow: var(--qc-shadow);
+  padding: 22px;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 13px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--qc-border);
+}
+
+th {
+  background: #f5f3ff;
+  color: var(--qc-ink);
+  font-weight: 700;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Dialogs and overlays */
+dialog,
+[role='dialog'] {
+  border: 1px solid var(--qc-border);
+  border-radius: 18px;
+  box-shadow: 0 24px 80px rgba(25, 18, 65, 0.18);
+}
+
+/* Make content adapt to mobile */
+img {
+  max-width: 100%;
+}
+
+@media (max-width: 700px) {
+  nav {
+    gap: 8px;
+  }
+
+  nav button {
+    flex: 1 1 auto;
+    padding: 10px;
+  }
+
+  .card,
+  .quiz-card,
+  .stat-card,
+  .dashboard-card,
+  .panel {
+    padding: 16px;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
